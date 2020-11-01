@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("imagens/11.png");
+    background-position: 0 0;
+    background-size: 1300px;
+    background-repeat: no-repeat;
+    height: 500px;
+  }
+  
+  .intro {
+      position: absolute;
+      height: 610px;
+      margin-left: 90px;
+  }
+  
+  .arrows-img {
+    width: 150px;
+  }
+  
+ #play{
+     position: absolute;
+     height: 100px;
+     margin-top: 400px;
+     margin-left: 585px;
+ }
+  #canvas {
+      padding: 20px 0px;
+      margin-left: 360px;
+      margin-top: 50px;
+  }
+  
+  .failed {
+      margin-top: 150px;
+      margin-left: 400px;
+  }
+
+  #game-over a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    margin-left: 585px;
+    margin-bottom: 100px;
+    margin-top: 25px;
+  }
+
+  #win a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    margin-top: 530px;
+    margin-left: 603px;
+  }
+
+  #win img {
+      height: 400px;
+    margin-top: 80px;
+    margin-left: 425px;
+  }
+
+  #board button {
+     position: absolute;
+     height: 30px;
+     margin-top: 30px;
+     text-decoration: none;
+     padding: 3px 20px;
+     border-style: none;
+     border-radius: 15px;
+  }
+
+  .calendar {
+      margin-left: 375px ;
+      position: absolute;
+      height: 30px;
+      margin-top: 30px;
+  }
+
+  .vaccin {
+      margin-left: 810px;
+      position: absolute;
+      height: 30px;
+      margin-top: 30px;
+  }
+
+  #months {
+      margin-left: 415px;
+  }
+
+  .counter {
+      margin-left: 840px;
+  }
+
+  #playWithTim {
+    position: absolute;
+    margin-top: 115px;
+      margin-left: 650px;
+  }
+
+  #playWithEsther {
+    position: absolute;
+    margin-top: 115px;
+    margin-left: 400px;
+  }

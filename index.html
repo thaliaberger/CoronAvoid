@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CoronAvoid</title>
+    <link rel="shortcut icon" href="./imagens/logo.png" type="image/x-icon" />
+  </head>
+  <body>
+               <!--PAGINA INICIAL-->
+    <div class="game-intro" id="intro" style= "display: block">
+      <img src="./imagens/bgDark.png" alt="introduction" class="intro" >
+      <img id="play" src="imagens/PLAY.png">
+    </div>
+            <!--ESCOLHER PERSONAGEM-->
+            <div id="caracterChoice" style="display: none">
+              <img src="imagens/playEsther.svg" alt="play-with-esther" id="playWithEsther">
+              <img src="imagens/playTim.svg" alt="play-with-tim" id="playWithTim">
+            </div>
+           
+                  <!--CANVAS-->
+    <div id ="board" style= "display: none">
+        <img class="calendar" src="imagens/calendar.png">
+        <button id="months">jan</button>
+        <img class="vaccin" src="imagens/vaccin.png">
+        <button id="counter" class="counter">00</button>
+      <canvas id="canvas" width="550" height="500"></canvas>
+    </div>
+             <!--PAGINA DE GAME OVER-->
+    <div id="game-over" style= "display: none">
+        <img class="failed" src="./imagens/fail.png">
+        <br>
+        <a href="#">TRY AGAIN?</a>
+    </div>
+              <!--PAGINA DE VITÓRIA-->
+<div id="win" style="display: none">
+  <a href="#">Play Again</a>
+  <img class="win" src="imagens/didit.png">
+  
+</div>
+             
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>

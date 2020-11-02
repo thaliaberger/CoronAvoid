@@ -8,71 +8,70 @@
 body {
     background-image: url("imagens/11.png");
     background-position: 0 0;
-    background-size: 1300px;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 500px;
   }
   
   .intro {
-      position: absolute;
-      height: 610px;
-      margin-left: 90px;
+    height: 600px;
+    position: relative;
+    display: flex;
+    left: 8%;
   }
-  
-  .arrows-img {
-    width: 150px;
-  }
+
   
  #play{
      position: absolute;
+     left: 46%;
+     top: 65%;
      height: 100px;
-     margin-top: 400px;
-     margin-left: 585px;
  }
+
   #canvas {
-      padding: 20px 0px;
-      margin-left: 360px;
-      margin-top: 50px;
+    position: absolute;
+    top: 15%;
+    left: 28%;
   }
   
   .failed {
-      margin-top: 120px;
-      margin-left: 400px;
+    position: absolute;
+    top: 15%;
+    left: 30%;
   }
 
   #game-over a {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
     position: absolute;
+    top: 70%;
+    left: 45%;
     color: white;
     text-decoration: none;
-    margin-left: 585px;
-    margin-bottom: 100px;
-    margin-top: 30px;
   }
 
   #win a {
     font-family: 'Open Sans', sans-serif;
     font-size: 10px;
     position: absolute;
+    top: 80%;
+    left: 48%;
     color: white;
     text-decoration: none;
-    margin-top: 520px;
-    margin-left: 606px;
   }
 
   #win img {
-      height: 400px;
-    margin-top: 70px;
-    margin-left: 425px;
+    height: 400px;
+    position: absolute;
+    top: 10%;
+    left: 34%;
   }
 
   #board button {
-     position: absolute;
+    position: absolute;
+    top: 9%;
      font-family: 'Open Sans', sans-serif;
      height: 30px;
      width: 60px;
-     margin-top: 30px;
      text-decoration: none;
      padding: 3px 20px;
      border-style: none;
@@ -80,39 +79,40 @@ body {
   }
 
   .calendar {
-      margin-left: 375px ;
-      position: absolute;
+    position: absolute;
+    top: 9%;
+    left: 29%;
       height: 30px;
-      margin-top: 30px;
   }
 
   .vaccin {
-      margin-left: 810px;
-      position: absolute;
+    position: absolute;
+    top: 9%;
+    left: 63%;
       height: 30px;
-      margin-top: 30px;
   }
 
   #months {
-      margin-left: 415px;
+    left: 32%;
   }
 
   .counter {
-      margin-left: 840px;
+    left: 65%;
+  }
+
+  #caracterChoice {
+    position: absolute;
+    top: 25%;
+    left: 33%;
+    
   }
 
   #playWithTim {
-    position: absolute;
-    margin-top: 150px;
-      margin-left: 660px;
       border: 0.2px solid grey;
       border-radius: 35px;
   }
 
   #playWithEsther {
-    position: absolute;
-    margin-top: 150px;
-    margin-left: 390px;
     border: 0.2px solid grey;
     border-radius: 35px;
 

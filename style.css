@@ -27,7 +27,7 @@ body {
      position: absolute;
      height: 100px;
      margin-top: 400px;
-     margin-left: 585px;
+     margin-left: 583px;
  }
   #canvas {
       padding: 20px 0px;
@@ -69,6 +69,7 @@ body {
 
   #board button {
      position: absolute;
+     font-family: 'Open Sans', sans-serif;
      height: 30px;
      margin-top: 30px;
      text-decoration: none;
@@ -101,12 +102,17 @@ body {
 
   #playWithTim {
     position: absolute;
-    margin-top: 115px;
-      margin-left: 650px;
+    margin-top: 150px;
+      margin-left: 660px;
+      border: 0.2px solid grey;
+      border-radius: 35px;
   }
 
   #playWithEsther {
     position: absolute;
-    margin-top: 115px;
-    margin-left: 400px;
+    margin-top: 150px;
+    margin-left: 390px;
+    border: 0.2px solid grey;
+    border-radius: 35px;
+
   }

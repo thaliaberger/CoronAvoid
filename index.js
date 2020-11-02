@@ -6,10 +6,13 @@ const board = document.getElementById("board");
 const count = document.getElementById("counter");
 const months = document.getElementById("months");
 const win = document.getElementById("win");
-
+const choice = document.getElementById("caracterChoice");
 
 const caracter = new Image();
 caracter.src = "./imagens/esther2.svg";
+
+const caracter2 = new Image();
+caracter2.src = "./imagens/Tim.svg";
 
 const virusImg = new Image ();
 virusImg.src = "./imagens/virus.png";
@@ -170,15 +173,17 @@ class Game {
   };
 
   checkVaccinCrash = () => {
+    
     const crash = this.vaccin.some((vaccin) => {
       return this.player.isCrashedWith(vaccin);
     });
 
-  //Incrementa o contador de vacinas
+    
+
+  //Incrementar o contador de vacinas
     if (crash){
 
      this.collection.push('vaccin');
-     console.log(this.collection);
 
      switch (this.collection.length) {
        case 2:
@@ -239,8 +244,6 @@ if (this.collection.length === 25){
 
 }
 
- 
-
 class Player extends Component {
   move() {
     this.x += this.speed;
@@ -253,24 +256,57 @@ class Player extends Component {
       this.x = canvas.width - 80;
     }
   }
-
+  
   draw() {
     ctx.drawImage(caracter, this.x, this.y, this.width, this.height);
   }
+
+}
+
+class Player2 extends Component {
+  move() {
+    this.x += this.speed;
+
+    if (this.x <= 0) {
+      this.x = 0;
+    }
+
+    if (this.x >= canvas.width - 80) {
+      this.x = canvas.width - 80;
+    }
+  }
+  
+  draw() {
+    ctx.drawImage(caracter2, this.x, this.y, this.width, this.height);
+  }
+
 }
 
 window.onload = () => {
   document.getElementById("play").onclick = () => {
-    startGame();
+    caracterDisplay();
   };
 
-  function startGame() {
+  function caracterDisplay(){
+    intro.style.display = "none";
+    choice.style.display = "block";
+  };
 
-     intro.style.display = "none";
+  document.getElementById("playWithTim").onclick = () => {
+    startGame(Player2);
+  };
+
+  document.getElementById("playWithEsther").onclick = () => {
+    startGame(Player);
+  };
+
+  function startGame(choosenCaracter) {
+
+     choice.style.display = "none";
      board.style.display = "block";
       
     const game = new Game(
-      new Player(canvas.width / 2 - 40, canvas.height - caracter.height, caracter.width, caracter.height, 0)
+      new choosenCaracter(canvas.width / 2 - 40, canvas.height - caracter.height, caracter.width, caracter.height, 0)
     );
 
     game.updateGame();

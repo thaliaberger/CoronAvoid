@@ -23,6 +23,12 @@ vaccinImg.src = "./imagens/vaccin.png";
 const canvasBackground = new Image();
 canvasBackground.src = "./imagens/canvasback2.svg";
 
+const cardiAudio = new Audio();
+cardiAudio.src ="./audio/cardi-b-coronavirus.mp3";
+cardiAudio.volume = 0.3;
+
+ctx.imageSmoothingEnabled = true;
+ctx.imageSmoothingQuality = 'high';
 
 class Component {
   constructor(x, y, width, height, speed) {
@@ -128,7 +134,7 @@ class Game {
       virus.draw();
     });
 
-    if (this.frames2 % 100 === 0) {
+    if (this.frames2 % 67 === 0) {
       let y = 0;
 
       let minX = 0;
@@ -168,10 +174,12 @@ class Game {
     });
 
     if (crashed) {
+      cardiAudio.play();
       cancelAnimationFrame(this.animationId);
-    
+     
       over.style.display = "block";
       board.style.display = "none";
+     
 
        }
   };
@@ -265,7 +273,10 @@ class Player extends Component {
   }
   
   draw() {
-    ctx.drawImage(caracter, this.x, this.y, this.width, this.height);
+    ctx.imageSmoothingQuality = "high";
+    ctx.imageSmoothingEnabled = true;  
+    ctx.drawImage(caracter, this.x, this.y, 80, 137);
+    
   }
 
 }
@@ -284,7 +295,9 @@ class Player2 extends Component {
   }
   
   draw() {
-    ctx.drawImage(caracter2, this.x, this.y, this.width, this.height);
+      ctx.imageSmoothingQuality = "high";
+    ctx.imageSmoothingEnabled = true;  
+    ctx.drawImage(caracter2, this.x, this.y, 80, 137);
   }
 
 }
@@ -313,7 +326,7 @@ window.onload = () => {
      board.style.display = "block";
       
     const game = new Game(
-      new choosenCaracter(canvas.width / 2 - 40, canvas.height - caracter.height, caracter.width, caracter.height, 0)
+      new choosenCaracter(canvas.width / 2 - 40, canvas.height - 137, 80, 137, 0)
     );
 
     game.updateGame();

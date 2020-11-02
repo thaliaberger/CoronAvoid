@@ -36,7 +36,7 @@ body {
   }
   
   .failed {
-      margin-top: 150px;
+      margin-top: 120px;
       margin-left: 400px;
   }
 
@@ -48,7 +48,7 @@ body {
     text-decoration: none;
     margin-left: 585px;
     margin-bottom: 100px;
-    margin-top: 25px;
+    margin-top: 15px;
   }
 
   #win a {
@@ -57,13 +57,13 @@ body {
     position: absolute;
     color: white;
     text-decoration: none;
-    margin-top: 530px;
+    margin-top: 520px;
     margin-left: 603px;
   }
 
   #win img {
       height: 400px;
-    margin-top: 80px;
+    margin-top: 70px;
     margin-left: 425px;
   }
 

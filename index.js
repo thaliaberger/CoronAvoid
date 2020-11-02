@@ -15,10 +15,13 @@ const caracter2 = new Image();
 caracter2.src = "./imagens/Tim.svg";
 
 const virusImg = new Image ();
-virusImg.src = "./imagens/virus.png";
+virusImg.src = "./imagens/virus.svg";
 
 const vaccinImg = new Image ();
 vaccinImg.src = "./imagens/vaccin.png";
+
+const canvasBackground = new Image();
+canvasBackground.src = "./imagens/canvasback2.svg";
 
 
 class Component {
@@ -64,7 +67,7 @@ class Virus extends Component {
   }
 
   draw() {
-    ctx.drawImage(virusImg, this.x, this.y, 30, 30);
+    ctx.drawImage(virusImg, this.x, this.y, 35, 35);
   }
 }
 
@@ -76,7 +79,7 @@ class Vaccin extends Component {
   }
 
   draw() {
-    ctx.drawImage(vaccinImg, this.x, this.y, 20, 30);
+    ctx.drawImage(vaccinImg, this.x, this.y, 17, 30);
   }
 
   
@@ -97,6 +100,7 @@ class Game {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = "#1C212E";  
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(canvasBackground, 0, 0, canvasBackground.width, canvasBackground.height);
 
     this.player.move();
     this.player.draw();
@@ -178,54 +182,57 @@ class Game {
       return this.player.isCrashedWith(vaccin);
     });
 
-    
-
   //Incrementar o contador de vacinas
     if (crash){
-
-     this.collection.push('vaccin');
+ 
+      let actualVaccin = this.vaccin.splice(0,1)[0];
+      let collided = actualVaccin.isCrashedWith(this.player);
+    
+      if (collided) {
+        this.collection.push(actualVaccin);
+      };
 
      switch (this.collection.length) {
-       case 2:
+       case 3:
         months.innerText = "feb";
         break;
-        case 4:
+        case 5:
           months.innerText = "mar";
           break;
-          case 6:
+          case 7:
             months.innerText = "apr";
             break;
-            case 8:
+            case 9:
               months.innerText = "may";
               break;
-              case 10:
+              case 11:
                 months.innerText = "jun";
                 break;
-                case 12:
+                case 13:
                   months.innerText = "jul";
                   break;
-                  case 14:
+                  case 15:
                     months.innerText = "aug";
                     break;
-                    case 16:
+                    case 17:
                       months.innerText = "sep";
                       break;
-                      case 18:
+                      case 19:
                         months.innerText = "oct";
                         break;
-                        case 20:
+                        case 21:
                           months.innerText = "nov";
                           break;
-                          case 22:
+                          case 23:
                             months.innerText = "dec";
                           
 
      };
 
-      if ((this.collection.length - 1) < 10 ){
-        count.innerText = '0' + (this.collection.length - 1);
+      if ((this.collection.length) < 10 ){
+        count.innerText = '0' + (this.collection.length);
       }else {
-        count.innerText = this.collection.length - 1;
+        count.innerText = this.collection.length;
       }; 
       };
    

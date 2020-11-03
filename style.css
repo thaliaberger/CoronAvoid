@@ -13,16 +13,16 @@ body {
   }
   
   .intro {
+    position: absolute;
+     left: 50%;
+     margin-left: -540px;
     height: 600px;
-    position: relative;
-    display: flex;
-    left: 8%;
+    
   }
-
-  
  #play{
      position: absolute;
-     left: 46%;
+     left: 50%;
+     margin-left: -50px;
      top: 65%;
      height: 100px;
  }
@@ -30,45 +30,53 @@ body {
   #canvas {
     position: absolute;
     top: 15%;
-    left: 28%;
+    left: 50%;
+    margin-left: -300px;
   }
   
-  .failed {
-    position: absolute;
-    top: 15%;
-    left: 30%;
-  }
-
   #game-over a {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
-    position: absolute;
-    top: 70%;
-    left: 45%;
     color: white;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  #game-over {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 15%;
+    left: 50%;
+    margin-left: -250px;
+  }
+
+  #win {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 10%;
+    left: 50%;
+    margin-left: -200px;
   }
 
   #win a {
     font-family: 'Open Sans', sans-serif;
     font-size: 10px;
-    position: absolute;
-    top: 80%;
-    left: 48%;
     color: white;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
   }
 
   #win img {
     height: 400px;
-    position: absolute;
-    top: 10%;
-    left: 34%;
   }
 
   #board button {
-    position: absolute;
-    top: 9%;
      font-family: 'Open Sans', sans-serif;
      height: 30px;
      width: 60px;
@@ -80,31 +88,39 @@ body {
 
   .calendar {
     position: absolute;
-    top: 9%;
-    left: 29%;
+     top: 7%;
+      left: 50%;
+      margin-left: -150px;
       height: 30px;
+   
   }
 
   .vaccin {
     position: absolute;
-    top: 9%;
-    left: 63%;
-      height: 30px;
+  top: 7%;
+  left: 50%;
+    height: 30px;
   }
 
   #months {
-    left: 32%;
+    position: absolute;
+  top: 7%;
+  left: 50%;
+  margin-left: -120px;
   }
 
   .counter {
-    left: 65%;
+    position: absolute;
+  top: 7%;
+  left: 50%;
+  margin-left: 20px;
   }
 
   #caracterChoice {
     position: absolute;
     top: 25%;
-    left: 33%;
-    
+    left: 50%;
+    margin-left: -210px;
   }
 
   #playWithTim {
@@ -115,5 +131,4 @@ body {
   #playWithEsther {
     border: 0.2px solid grey;
     border-radius: 35px;
-
   }

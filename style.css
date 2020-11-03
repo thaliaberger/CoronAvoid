@@ -22,8 +22,8 @@ body {
  #play{
      position: absolute;
      left: 50%;
-     margin-left: -50px;
-     top: 65%;
+     margin-left: -52px;
+     top: 60%;
      height: 100px;
  }
 
@@ -41,6 +41,7 @@ body {
     text-decoration: none;
     display: flex;
     justify-content: center;
+    margin-top: 5px;
   }
 
   #game-over {

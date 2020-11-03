@@ -25,7 +25,15 @@ canvasBackground.src = "./imagens/canvasback2.svg";
 
 const cardiAudio = new Audio();
 cardiAudio.src ="./audio/cardi-b-coronavirus.mp3";
-cardiAudio.volume = 0.3;
+cardiAudio.volume = 0.2;
+
+const hitAudio = new Audio();
+hitAudio.src ="./audio/hit.mp3";
+hitAudio.volume = 0.2;
+
+const winAudio = new Audio();
+winAudio.src ="./audio/win.mp3";
+winAudio.volume = 0.2;
 
 ctx.imageSmoothingEnabled = true;
 ctx.imageSmoothingQuality = 'high';
@@ -200,6 +208,8 @@ class Game {
         this.collection.push(actualVaccin);
       };
 
+      hitAudio.play();
+
      switch (this.collection.length) {
        case 3:
         months.innerText = "feb";
@@ -249,6 +259,7 @@ class Game {
 
    checkGameWin = () => {
 if (this.collection.length === 25){
+  winAudio.play();
   cancelAnimationFrame(this.animationId);
   win.style.display = "block";
   board.style.display = "none";

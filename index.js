@@ -265,7 +265,7 @@ if (this.collection.length === 25){
   board.style.display = "none";
   over.style.display = "none";
 }
-   };
+ };
   
 
 }

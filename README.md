@@ -1,6 +1,9 @@
 # CoronAvoid
 
-------> <a href="https://thaliaberger.github.io/coronavoid/">CLICK to play</a> <------  </br>
+CoronAvoid is a game built in HTML, CSS, canvas and JavaScript.
+
+------> <a href="https://thaliaberger.github.io/coronavoid/">CLICK to play</a> <------  
+
 # INSTRUCTIONS
  <ul>
  <li>Click PLAY button to start </li>

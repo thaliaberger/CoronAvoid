@@ -20,4 +20,4 @@ CoronAvoid is a game built in HTML, CSS, canvas and JavaScript.
  <li>DON'T touch the virus</li>
  </ul>
  <br>
------------> Avoid the virus, collect the vaccins, get safe to the next year!
+-----------> Avoid the virus, collect the vaccines, get safe to the next year!

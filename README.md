@@ -15,7 +15,6 @@ CoronAvoid is a game built in HTML, CSS, canvas and JavaScript.
  <br>
  <li>Use left and right arrow keys to move</li>
  <br>
-<<<<<<< HEAD
  <li>Collect 25 vaccines to win the game</li>
  <br>
  <li>DON'T touch the virus</li>

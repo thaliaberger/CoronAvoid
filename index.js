@@ -96,6 +96,8 @@ class Vaccin extends Component {
     ctx.drawImage(vaccinImg, this.x, this.y, 17, 30);
   }
 
+
+
   
 }
 
@@ -162,6 +164,8 @@ class Game {
       vaccin.move();
       vaccin.draw();
     });
+
+    
 
     if (this.frames % 80 === 0) {
       let y = 0;
@@ -356,4 +360,5 @@ window.onload = () => {
       game.player.speed = 0;
     });
   }
+
 };

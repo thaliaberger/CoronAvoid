@@ -1,135 +1,162 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-image: url("imagens/11.png");
-    background-position: 0 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  
-  .intro {
-    position: absolute;
-     left: 50%;
-     margin-left: -540px;
-    height: 600px;
-    
-  }
- #play{
-     position: absolute;
-     left: 50%;
-     margin-left: -52px;
-     top: 60%;
-     height: 100px;
- }
+  background-image: url("imagens/11.png");
+  background-position: 0 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-  #canvas {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    margin-left: -300px;
-  }
-  
-  #game-over a {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    margin-top: 5px;
-  }
+.intro {
+  position: absolute;
+  left: 50%;
+  margin-left: -540px;
+  height: 600px;
+}
+#play {
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  margin-left: -52px;
+  top: 63%;
+  height: 100px;
+  transition: 0.2s ease-in-out;
+}
 
-  #game-over {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    top: 15%;
-    left: 50%;
-    margin-left: -250px;
-  }
+#play:hover {
+  height: 120px;
+  top: 62.2%;
+  left: 49.2%;
+}
 
-  #win {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    top: 10%;
-    left: 50%;
-    margin-left: -200px;
-  }
+#canvas {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  margin-left: -300px;
+}
 
-  #win a {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 10px;
-    color: white;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-  }
+#game-over a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  transition: 0.2s ease-in-out;
+}
 
-  #win img {
-    height: 400px;
-  }
+#game-over a:hover {
+  color: rgb(252, 130, 130);
+}
 
-  #board button {
-     font-family: 'Open Sans', sans-serif;
-     height: 30px;
-     width: 60px;
-     text-decoration: none;
-     padding: 3px 20px;
-     border-style: none;
-     border-radius: 15px;
-  }
+#game-over {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 15%;
+  left: 50%;
+  margin-left: -240px;
+}
 
-  .calendar {
-    position: absolute;
-     top: 7%;
-      left: 50%;
-      margin-left: -150px;
-      height: 30px;
-   
-  }
+#win {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 10%;
+  left: 50%;
+  margin-left: -200px;
+}
 
-  .vaccin {
-    position: absolute;
+#win a {
+  font-family: "Open Sans", sans-serif;
+  font-size: 10px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+
+#win img {
+  height: 400px;
+}
+
+#board button {
+  font-family: "Open Sans", sans-serif;
+  height: 30px;
+  width: 60px;
+  text-decoration: none;
+  padding: 3px 20px;
+  border-style: none;
+  border-radius: 15px;
+}
+
+.calendar {
+  position: absolute;
   top: 7%;
   left: 50%;
-    height: 30px;
-  }
+  margin-left: -150px;
+  height: 30px;
+}
 
-  #months {
-    position: absolute;
+.vaccin {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  height: 30px;
+}
+
+#months {
+  position: absolute;
   top: 7%;
   left: 50%;
   margin-left: -120px;
-  }
+}
 
-  .counter {
-    position: absolute;
+.counter {
+  position: absolute;
   top: 7%;
   left: 50%;
   margin-left: 20px;
-  }
+}
 
-  #caracterChoice {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    margin-left: -210px;
-  }
+#caracterChoice {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-left: -240px;
+}
 
-  #playWithTim {
-      border: 0.2px solid grey;
-      border-radius: 35px;
-  }
+#playWithTim {
+  filter: grayscale(1);
+  cursor: pointer;
+  border: 0.2px solid grey;
+  border-radius: 35px;
+  transition: 0.1s ease-in-out;
+  margin-left: 30px;
+}
 
-  #playWithEsther {
-    border: 0.2px solid grey;
-    border-radius: 35px;
-  }
+#playWithTim:hover {
+  filter: grayscale(0);
+}
+
+#playWithEsther {
+  filter: grayscale(1);
+  cursor: pointer;
+  border: 0.2px solid grey;
+  border-radius: 35px;
+  transition: 0.1s ease-in-out;
+  margin-right: 30px;
+}
+
+#playWithEsther:hover {
+  filter: grayscale(0);
+}

@@ -14,29 +14,29 @@ caracter.src = "./imagens/esther2.svg";
 const caracter2 = new Image();
 caracter2.src = "./imagens/Tim.svg";
 
-const virusImg = new Image ();
+const virusImg = new Image();
 virusImg.src = "./imagens/virus.svg";
 
-const vaccinImg = new Image ();
+const vaccinImg = new Image();
 vaccinImg.src = "./imagens/vaccin.png";
 
 const canvasBackground = new Image();
 canvasBackground.src = "./imagens/canvasback2.svg";
 
 const cardiAudio = new Audio();
-cardiAudio.src ="./audio/cardi-b-coronavirus.mp3";
+cardiAudio.src = "./audio/cardi-b-coronavirus.mp3";
 cardiAudio.volume = 0.2;
 
 const hitAudio = new Audio();
-hitAudio.src ="./audio/hit.mp3";
+hitAudio.src = "./audio/hit.mp3";
 hitAudio.volume = 0.2;
 
 const winAudio = new Audio();
-winAudio.src ="./audio/win.mp3";
+winAudio.src = "./audio/win.mp3";
 winAudio.volume = 0.2;
 
 ctx.imageSmoothingEnabled = true;
-ctx.imageSmoothingQuality = 'high';
+ctx.imageSmoothingQuality = "high";
 
 class Component {
   constructor(x, y, width, height, speed) {
@@ -85,9 +85,7 @@ class Virus extends Component {
   }
 }
 
-
 class Vaccin extends Component {
-
   move() {
     this.y += this.speed;
   }
@@ -95,10 +93,6 @@ class Vaccin extends Component {
   draw() {
     ctx.drawImage(vaccinImg, this.x, this.y, 17, 30);
   }
-
-
-
-  
 }
 
 class Game {
@@ -114,18 +108,23 @@ class Game {
 
   updateGame = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#1C212E";  
+    ctx.fillStyle = "#1C212E";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.drawImage(canvasBackground, 0, 0, canvasBackground.width, canvasBackground.height);
+    ctx.drawImage(
+      canvasBackground,
+      0,
+      0,
+      canvasBackground.width,
+      canvasBackground.height
+    );
 
     this.player.move();
     this.player.draw();
 
-
     this.updateVirus();
 
     this.updateVaccin();
-  
+
     this.checkVaccinCrash();
 
     this.animationId = requestAnimationFrame(this.updateGame);
@@ -133,7 +132,6 @@ class Game {
     this.checkGameOver();
 
     this.checkGameWin();
-
   };
 
   updateVirus = () => {
@@ -165,8 +163,6 @@ class Game {
       vaccin.draw();
     });
 
-    
-
     if (this.frames % 80 === 0) {
       let y = 0;
 
@@ -188,90 +184,80 @@ class Game {
     if (crashed) {
       cardiAudio.play();
       cancelAnimationFrame(this.animationId);
-     
+
       over.style.display = "block";
       board.style.display = "none";
-     
-
-       }
+    }
   };
 
   checkVaccinCrash = () => {
-    
     const crash = this.vaccin.some((vaccin) => {
       return this.player.isCrashedWith(vaccin);
     });
 
-  //Incrementar o contador de vacinas
-    if (crash){
- 
-      let actualVaccin = this.vaccin.splice(0,1)[0];
+    //Incrementar o contador de vacinas
+    if (crash) {
+      let actualVaccin = this.vaccin.splice(0, 1)[0];
       let collided = actualVaccin.isCrashedWith(this.player);
-    
+
       if (collided) {
         this.collection.push(actualVaccin);
-      };
+      }
 
       hitAudio.play();
 
-     switch (this.collection.length) {
-       case 3:
-        months.innerText = "feb";
-        break;
+      switch (this.collection.length) {
+        case 3:
+          months.innerText = "feb";
+          break;
         case 5:
           months.innerText = "mar";
           break;
-          case 7:
-            months.innerText = "apr";
-            break;
-            case 9:
-              months.innerText = "may";
-              break;
-              case 11:
-                months.innerText = "jun";
-                break;
-                case 13:
-                  months.innerText = "jul";
-                  break;
-                  case 15:
-                    months.innerText = "aug";
-                    break;
-                    case 17:
-                      months.innerText = "sep";
-                      break;
-                      case 19:
-                        months.innerText = "oct";
-                        break;
-                        case 21:
-                          months.innerText = "nov";
-                          break;
-                          case 23:
-                            months.innerText = "dec";
-                          
+        case 7:
+          months.innerText = "apr";
+          break;
+        case 9:
+          months.innerText = "may";
+          break;
+        case 11:
+          months.innerText = "jun";
+          break;
+        case 13:
+          months.innerText = "jul";
+          break;
+        case 15:
+          months.innerText = "aug";
+          break;
+        case 17:
+          months.innerText = "sep";
+          break;
+        case 19:
+          months.innerText = "oct";
+          break;
+        case 21:
+          months.innerText = "nov";
+          break;
+        case 23:
+          months.innerText = "dec";
+      }
 
-     };
-
-      if ((this.collection.length) < 10 ){
-        count.innerText = '0' + (this.collection.length);
-      }else {
+      if (this.collection.length < 10) {
+        count.innerText = "0" + this.collection.length;
+      } else {
         count.innerText = this.collection.length;
-      }; 
-      };
-   
-  
-   };
+      }
+    }
+  };
 
-   checkGameWin = () => {
-if (this.collection.length === 25){
-  winAudio.play();
-  cancelAnimationFrame(this.animationId);
-  win.style.display = "block";
-  board.style.display = "none";
-  over.style.display = "none";
-}
- };
-  
-
+  checkGameWin = () => {
+    if (this.collection.length === 25) {
+      winAudio.play();
+      cancelAnimationFrame(this.animationId);
+      win.style.display = "block";
+      board.style.display = "none";
+      over.style.display = "none";
+    }
+  };
 }
 
 class Player extends Component {
@@ -286,14 +272,12 @@ class Player extends Component {
       this.x = canvas.width - 80;
     }
   }
-  
+
   draw() {
     ctx.imageSmoothingQuality = "high";
-    ctx.imageSmoothingEnabled = true;  
+    ctx.imageSmoothingEnabled = true;
     ctx.drawImage(caracter, this.x, this.y, 80, 137);
-    
   }
-
 }
 
 class Player2 extends Component {
@@ -308,40 +292,47 @@ class Player2 extends Component {
       this.x = canvas.width - 80;
     }
   }
-  
+
   draw() {
-      ctx.imageSmoothingQuality = "high";
-    ctx.imageSmoothingEnabled = true;  
+    ctx.imageSmoothingQuality = "high";
+    ctx.imageSmoothingEnabled = true;
     ctx.drawImage(caracter2, this.x, this.y, 80, 137);
   }
-
 }
 
 window.onload = () => {
   document.getElementById("play").onclick = () => {
+    hitAudio.play();
     caracterDisplay();
   };
 
-  function caracterDisplay(){
+  function caracterDisplay() {
     intro.style.display = "none";
     choice.style.display = "block";
-  };
+  }
 
   document.getElementById("playWithTim").onclick = () => {
+    hitAudio.play();
     startGame(Player2);
   };
 
   document.getElementById("playWithEsther").onclick = () => {
+    hitAudio.play();
     startGame(Player);
   };
 
   function startGame(choosenCaracter) {
+    choice.style.display = "none";
+    board.style.display = "block";
 
-     choice.style.display = "none";
-     board.style.display = "block";
-      
     const game = new Game(
-      new choosenCaracter(canvas.width / 2 - 40, canvas.height - 137, 80, 137, 0)
+      new choosenCaracter(
+        canvas.width / 2 - 40,
+        canvas.height - 137,
+        80,
+        137,
+        0
+      )
     );
 
     game.updateGame();
@@ -360,5 +351,4 @@ window.onload = () => {
       game.player.speed = 0;
     });
   }
-
 };
